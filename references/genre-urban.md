@@ -207,6 +207,9 @@
 | 17. 性描寫 | ✓ | 標準要求 |
 | 18. 商業吸引力 | ✓ | 標準要求 |
 | 19. 題材統一性 | ✓ | **重點**：避免突然混入幻想/科幻元素 |
+| 27. 地理真實性 | ✓ | **條件維度（`realWorldGeography=true`）**：真實世界地理（路名/行政區/車站/方位/距離/步行時間）必須查證；移動/路線/偵查/抵達新地點章觸發；見 `references/geography-verify.md`（編號對應 audit-dimensions.md 維度 27） |
+
+> 註：本表為都市題材的維度速覽（沿用題材本地編號 1-19）；維度 27 採 audit-dimensions.md 的 canonical 編號。都市/現代寫實作品預設 `realWorldGeography=true`，架空設定的都市異想題材可關閉。
 
 ---
 

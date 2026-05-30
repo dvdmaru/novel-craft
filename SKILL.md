@@ -33,7 +33,7 @@ Novel Craft 是一套以 **寫→審→改** 閉環為核心的長篇小說 AI �
 
 核心創新：
 - **7 份真相文件**追蹤世界狀態，解決 LLM 上下文窗口不足導致的角色失憶、設定崩壞問題
-- **26 維度連續性審計**，其中 4 個維度為純規則引擎（不額外消耗 Token）
+- **27 維度連續性審計**，其中 4 個維度為純規則引擎（不額外消耗 Token），維度 27（地理真實性）為真實世界地理題材的條件維度
 - **去 AI 味鐵律**，用標記詞限頻等硬規則壓制 LLM 的典型文風
 - **題材規則三層分離**（通用 → 題材 → 單本書），高度可配置
 
@@ -438,7 +438,7 @@ mkdir -p archives/vol{N}
 
 詳細格式與模板範例見 `{SKILL_DIR}/references/state-schemas.md`
 
-## 26 維度審計（摘要）
+## 27 維度審計（摘要）
 
 **LLM 審計維度（1-19, 24-26）**：
 1-OOC / 2-時間線 / 3-設定衝突 / 4-戰力崩壞* / 5-數值檢查* / 6-伏筆 / 7-節奏 / 8-文風 / 9-信息越界 / 10-詞彙疲勞 / 11-利益鏈斷裂 / 12-年代考據* / 13-配角降智 / 14-配角工具人化 / 15-爽點虛化 / 16-台詞失真 / 17-流水帳 / 18-知識庫污染 / 19-視角一致性 / 24-支線停滯 / 25-弧線平坦 / 26-節奏單調
@@ -446,7 +446,9 @@ mkdir -p archives/vol{N}
 **規則引擎維度（20-23）**：
 20-段落等長 / 21-套話密度 / 22-公式化轉折 / 23-列表式結構
 
-（*標示的維度需題材配置啟用）
+**條件維度（需題材配置啟用）**：4-戰力崩壞 / 5-數值檢查 / 12-年代考據 / **27-地理真實性**（`realWorldGeography=true`，真實世界地理的移動 / 路線 / 偵查 / 抵達新地點章查證地理事實；見 `references/geography-verify.md`）
+
+（*及條件維度需題材配置啟用）
 
 詳見 `{SKILL_DIR}/references/audit-dimensions.md`
 
@@ -485,7 +487,8 @@ mkdir -p archives/vol{N}
 | 文件 | 內容 | 何時讀取 |
 |------|------|---------|
 | `{SKILL_DIR}/references/writer-rules.md` | Writer Agent 完整寫作規則（25條基礎 + 技法 + 輸出格式） | 執行 write/draft 時 |
-| `{SKILL_DIR}/references/audit-dimensions.md` | 26 維度審計完整定義 | 執行 audit 時 |
+| `{SKILL_DIR}/references/audit-dimensions.md` | 27 維度審計完整定義 | 執行 audit 時 |
+| `{SKILL_DIR}/references/geography-verify.md` | 維度 27 地理真實性 SOP（路線真相卡 + 工具綁定） | realWorldGeography 移動章 audit / 寫作前 |
 | `{SKILL_DIR}/references/anti-ai-rules.md` | 去 AI 味完整規則與標記詞清單 | 執行 audit/revise 時 |
 | `{SKILL_DIR}/references/state-schemas.md` | 7 份真相文件的格式與模板 | 執行 create 時 |
 | `{SKILL_DIR}/references/genre-*.md` | 各題材專屬規則 | 依書籍題材讀取 |

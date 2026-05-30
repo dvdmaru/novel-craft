@@ -25,6 +25,7 @@
 - 本章衝突定義
 - 預期伏筆操作（新增/推進/回收）
 - 建議的章節類型
+- （`realWorldGeography=true` 且本章為移動/路線/偵查/抵達新地點章）**路線真相卡**：見 references/geography-verify.md §5；在 WRITER 寫作前先產出地理基準（[已查] vs [創作] 分欄），讓代入感內建而非事後補丁
 
 **Architect Prompt 核心要點**：
 - 遵循黃金三章法則：前 3 章必須建立衝突、展示主角魅力、給出明確目標
@@ -76,6 +77,7 @@
    - 維度 4（戰力崩壞）：僅當 powerScaling=true
    - 維度 5（數值檢查）：僅當 numericalSystem=true
    - 維度 12（年代考據）：僅當 eraResearch=true
+   - 維度 27（地理真實性）：僅當 realWorldGeography=true，且本章為移動 / 路線 / 偵查 / 抵達新地點章；需地圖查證，見 references/geography-verify.md
 3. 先執行規則引擎維度（20-23）：
    - 維度 20：計算各段落字數的變異係數（CV = σ/μ），CV < 0.15 → warning
    - 維度 21：統計套話詞出現次數 / (總字數/1000)，> 3 → warning
