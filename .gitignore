@@ -8,3 +8,16 @@ venv/
 
 # Internal state (whitelist cp only)
 PROJECT-STATUS.md
+
+# --- secrets (added 2026-08-29 after Zeabur env-var leak audit) ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+credentials*.json
+service-account*.json
+service_account*.json
+.mcp.json
+.claude/settings.local.json
