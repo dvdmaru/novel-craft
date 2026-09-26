@@ -129,7 +129,6 @@
 |------|--------|------|
 | maxAuditRetries | 2 | 最多審計重試次數 |
 | pauseAfterConsecutiveFailures | 3 | 連續失敗多少次後暫停管線 |
-| retryTemperatureStep | 0.1 | 每次重試時創造性微增 |
 
 ## 真相文件更新規則
 
